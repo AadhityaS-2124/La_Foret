@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Architectural Wardrobe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#ddd9d8",
+                    "on-primary-container": "#858383",
+                    "on-tertiary-container": "#868382",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-tint": "#5f5e5e",
+                    "on-surface": "#1c1b1b",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#dde5db",
+                    "secondary-fixed-dim": "#c1c9c0",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#e6e2df",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "secondary-fixed": "#dde5db",
+                    "tertiary-container": "#1c1b1a",
+                    "surface-bright": "#fdf8f8",
+                    "tertiary": "#000000",
+                    "on-background": "#1c1b1b",
+                    "on-surface-variant": "#444748",
+                    "surface-container-low": "#f7f3f2",
+                    "on-secondary-fixed": "#161d18",
+                    "outline-variant": "#c4c7c7",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f1edec",
+                    "error": "#ba1a1a",
+                    "background": "#fdf8f8",
+                    "primary": "#000000",
+                    "on-error": "#ffffff",
+                    "surface": "#fdf8f8",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "secondary": "#586059",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-fixed-variant": "#414942",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e6",
+                    "on-secondary-container": "#5e665f",
+                    "inverse-surface": "#313030",
+                    "outline": "#747878",
+                    "inverse-primary": "#c8c6c5",
+                    "accent-sage": "#7A827A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-justify-custom {
+            text-align-last: left;
+            text-align: justify;
+        }
+        .hairline-separator {
+            border-top: 1px solid #1A1A1A;
+        }
+    </style>
+</head>
+<body class="bg-[#FBFBF9] text-primary font-body-md overflow-x-hidden selection:bg-accent-sage selection:text-white">
+<!-- Global Utility Banner -->
+<div class="w-full bg-accent-sage text-white py-3 px-margin-mobile text-center z-[60] relative">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">International Shipping Available on All Objects</span>
+</div>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-12 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto bg-transparent border-b border-primary/10 transition-all duration-300" id="main-nav">
+<div class="flex items-center">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary" href="#">AURA</a>
+</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-label-md text-label-md text-primary border-b border-primary pb-1" href="#">Collection</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">Objects</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">Journal</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Exhibit -->
+<section class="min-h-screen pt-32 pb-20 md:py-0 md:h-[921px] flex flex-col md:flex-row items-center overflow-hidden border-b border-primary/10">
+<!-- Left Imagery (60%) -->
+<div class="w-full md:w-[60%] h-[512px] md:h-full relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A high-fashion editorial photograph of a minimalist architectural coat in neutral charcoal wool. The garment is draped elegantly over a structural wooden chair in a sun-drenched, stark white studio. Deep shadows create sharp geometric patterns across the floor. The aesthetic is clean, sophisticated, and evokes a sense of quiet authority and Japandi minimalism." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkUDPIZYsSunFaI37pZRQsG8zb6j11WED8o55Iusui1MhkwfjIDvXjpSU00rJ9jD8ZVS6zHpwLe3rodJA0J2-Ox2616Pt53qAvr5__y2jJAOVwRJnkgKGa_IM-TVhg66eEhHQI4VSOx58W_o6BgjtzTd7tTxMyID6HoKIsfd4Oreye4qLM7-DlEBEbZkJoKt8N9Ayg-NcfZO43mAswq3zm6KPNNSVHBb08oundm5lhuSLzkq_XMcx5RRvzcnKnmk9M_K5Vol6CjNk')">
+</div>
+</div>
+<!-- Right Content (40%) -->
+<div class="w-full md:w-[40%] px-margin-mobile md:px-16 py-12 md:py-0 flex flex-col justify-center bg-[#FBFBF9]">
+<h1 class="font-headline-xl text-headline-xl mb-6 text-primary leading-[1.1]">Form follows function.</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-md">
+                    Wardrobe essentials designed with architectural intent and zero-waste materials. Crafted for the intentional life.
+                </p>
+<div>
+<button class="px-10 py-5 border border-primary text-primary font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-[#FBFBF9] transition-all duration-300">
+                        Explore the Collection
+                    </button>
+</div>
+</div>
+</section>
+<!-- Product Architecture Grid -->
+<section class="py-40 px-margin-mobile md:px-margin-desktop bg-[#FBFBF9] max-w-container-max mx-auto">
+<div class="text-center mb-24">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-primary">The Living Edit</h2>
+<div class="w-12 h-[1px] bg-primary mx-auto opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-gutter">
+<!-- Product 01 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] w-full overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up architectural detail of a structural blazer in heavy black linen. The focus is on a single, perfectly executed lapel edge and the subtle texture of the sustainable fabric. The lighting is harsh and directional, emphasizing the clean lines and absence of unnecessary ornamentation. Minimalist high-end fashion photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpRR5MSf6-XLJ--c6KlJyXPfa3287xxxCE7W6MmBUOB4G7fV-wwCTy4NkMacnsgl5xCsLKWPvqECO6o0uxE8aJp4lrKd-k-A52EMnsxTfDpXFNyCcoGIo18dU0EjiaUQ2z0i1yHwzqDsUo_LWkOMiePynOugq5pvdjnUIZAUmZZrJFaUD6QD7EJNduZlueaYeiNuf8u1p-0P7ghtciQiSkB0ziyd1CUUwRReakyETnzvq4tZanaF1EKHSnIH1AeTS8NZsuBVqfB0U"/>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">01</span>
+<h3 class="font-body-lg text-body-lg font-normal">Structural Blazer</h3>
+</div>
+<span class="font-label-md text-label-md">$340 USD</span>
+</div>
+</div>
+<!-- Product 02 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] w-full overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Minimalist trousers displayed as a geometric form, folded precisely against a light cream concrete backdrop. The fabric is a soft, organic cotton-hemp blend in a muted stone color. Soft daylight diffuses the scene, maintaining the hard-edge minimalist aesthetic while highlighting the functional silhouette. Professional studio product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdss5TBTALm25B5dPIonxKrtPCuDpHp1F74KU_BmCNw1XGJf2tDkPbs5VP5a-zIct5XfGljHCdDrveufgfbOkM8VG90agtoHJ4GX0v2gYoACSucvM6C6VOXt4p_8AfebRNFbnw4G6tHU0oZusfoP5l2ISX8gVHso93u211Xvel4DVZOb4zGB6cjgQ8yqX9eGtS_NJD9wUWGptSrDKvBsHeBkdaNSlYyGGZHfL54lQb-2ehBQpFOZ09P0CSR0B2VPErjYb95MJ625w"/>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">02</span>
+<h3 class="font-body-lg text-body-lg font-normal">Column Trouser</h3>
+</div>
+<span class="font-label-md text-label-md">$280 USD</span>
+</div>
+</div>
+<!-- Product 03 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] w-full overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="An oversized sculptural knit sweater in ivory wool, captured from a side profile to emphasize its architectural drape. The sweater is set against a dark ebony wood background, creating high contrast. The mood is serene and expensive, focusing on the tactile quality of the knit and its geometric simplicity. Modern Japandi clothing brand visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxY-2a09E3NVufAzWPgGXao70cl7XzXNXn83RBmGZl7OdKH8svZd60gk4kCQk5qmN5Ih07R9uSywEbATegQGZG1dJE-aIfkpw9ZNBf4fczsief5G_ZnuNRGLEDnSswVlduESKf4kxlpiHby_2slZNPWBys-zyIjc48V6_xMaXvKYhtA_P8vZxW5B6gitLUxYt5l7ZLB4AoEUoZDKz-IIylcvBCbp5aeA6XOxylV4E4CBZXcB6cGTqOtH3HlFFBHO9RpPjCpACQRwA"/>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">03</span>
+<h3 class="font-body-lg text-body-lg font-normal">Sculptural Knit</h3>
+</div>
+<span class="font-label-md text-label-md">$410 USD</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy Block -->
+<section class="w-full bg-[#F2F1ED] py-32 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<!-- Left: Quotation -->
+<div class="pr-0 md:pr-12">
+<blockquote class="font-headline-lg text-headline-lg italic leading-tight text-primary">
+                        "We believe that true luxury lies in the silence between the details. It is not what we add, but what we have the courage to leave out."
+                    </blockquote>
+<p class="font-label-md text-label-md mt-8 uppercase tracking-widest text-secondary">— The Aura Manifesto</p>
+</div>
+<!-- Right: Micro-paragraphs -->
+<div class="space-y-12">
+<div class="border-l border-primary/20 pl-8">
+<h4 class="font-label-md text-label-md uppercase tracking-widest mb-3 text-primary">Traceable Supply Chains</h4>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                            Every fiber is accounted for. From the sheep farms of New Zealand to our atelier in Kyoto, we maintain a direct connection to every stage of creation.
+                        </p>
+</div>
+<div class="border-l border-primary/20 pl-8">
+<h4 class="font-label-md text-label-md uppercase tracking-widest mb-3 text-primary">Organic Textures</h4>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                            We prioritize raw, untreated materials that age with the wearer. Linen, wool, and hemp treated only with earth-derived pigments.
+                        </p>
+</div>
+<div class="border-l border-primary/20 pl-8">
+<h4 class="font-label-md text-label-md uppercase tracking-widest mb-3 text-primary">Circular Lifecycle</h4>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                            Designed to be dismantled. Our zero-waste patterns ensure that every scrap is repurposed into new textiles or biodegradable packaging.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Material Showcase (Secondary imagery) -->
+<section class="py-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap- gutter">
+<div class="w-full md:w-1/3 h-[500px] bg-cover bg-center" data-alt="A macro shot of raw silk textile being woven on a traditional loom. The sunlight catches the fine threads, creating a shimmering, ethereal effect. The color palette is composed of soft beige and off-white. The image captures the essence of handmade craftsmanship and material honesty within a minimalist, architectural framework." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhn7Bp6y5lD4vqqH_jgvsGo9_gMjAssQBzNZHmfGfh6mz7DNHMsSUAg-AFkrz7Yf4Qy4bulq6PKgBOvovWne7w4aJov5LPDyqTo1zsY4XwH_GVo7XpjlJyYehncJ0-tNi7Y5Tm-GWf6j9es3Q1bCjhWI-uUvoKNq5Et4aWO20TCgg2OcbFEtBiCUKwCZqeONU5_J9SRiYAVCTPv7Y8gri00vp8SYpFq0YIKB2brSL8hZGdfGE4pGNTDNehNzAYOsdS6TwqY6kyxKE')">
+</div>
+<div class="w-full md:w-2/3 h-[500px] bg-cover bg-center flex items-end p-10" data-alt="A modern architectural structure with floor-to-ceiling glass and black steel beams, overlooking a minimalist Japanese dry garden (karesansui). The scene is bathed in the cool light of dawn, emphasizing structural clarity and a connection between the built environment and nature. This image serves as the environmental inspiration for the brand AURA." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGiaSm0IoZouvs1zzSf6EVh7mWzqn7_NfyUOpcGqFgToolxUlyxYdohh0gXMg-dWoqtVbtjpcBgE5KP5SrQwDkYHb7lQ6cS6aGPr3_KrdFIRGnPlcAATKLmOueeu2raTj3YGMmTuhiv_rk_MiGIz1e4mDuCYBdYFDCRzysFqpsx52T5d2AlYTnrm3_q8qbQyn2d4FlXbU7BDGTJ1Nbnsap02FHdRHCsykrcmFZapG62YxjRvTsxEfos9afuiiGbr-ym11YMdz4dAI')">
+<div class="bg-[#FBFBF9] p-8 max-w-sm">
+<h5 class="font-label-md text-label-md uppercase mb-4">Architecture as Muse</h5>
+<p class="font-body-md text-body-md text-secondary">Our silhouettes are informed by the brutalist forms of Tange and the rhythmic simplicity of Scandinavian woodcraft.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-24 px-margin-mobile md:px-margin-desktop bg-tertiary text-on-tertiary">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-gutter">
+<!-- Brand & Newsletter -->
+<div class="md:col-span-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8 text-white">AURA</h2>
+<p class="font-body-md text-on-tertiary/60 mb-10 max-w-sm">
+                        Join our quiet community. Receive occasional reflections on design, architecture, and new object releases.
+                    </p>
+<div class="flex items-end gap-0 max-w-md group">
+<input class="bg-transparent border-0 border-b border-on-tertiary/40 focus:ring-0 focus:border-on-tertiary text-on-tertiary w-full pb-3 font-body-md placeholder:text-on-tertiary/30 transition-all" placeholder="Email Address" type="email"/>
+<button class="border-b border-on-tertiary/40 px-6 pb-3 font-label-md text-label-md uppercase tracking-widest hover:text-white hover:border-on-tertiary transition-all">Join</button>
+</div>
+</div>
+<div class="mt-16 md:mt-0">
+<p class="font-label-sm text-label-sm text-on-tertiary/40">© 2024 AURA. All rights reserved.</p>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div class="md:col-span-2 md:col-start-8">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-white mb-8">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Collection</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Objects</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">About</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Journal</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div class="md:col-span-3">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-white mb-8">Service</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body-md text-on-tertiary/60 hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+<div class="mt-12 flex gap-6">
+<a class="text-on-tertiary/40 hover:text-white" href="#"><span class="font-label-sm text-label-sm uppercase tracking-widest">Instagram</span></a>
+<a class="text-on-tertiary/40 hover:text-white" href="#"><span class="font-label-sm text-label-sm uppercase tracking-widest">Pinterest</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for navigation scroll effect
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-sm', 'h-16');
+                nav.classList.remove('bg-transparent', 'h-20');
+            } else {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-sm', 'h-16');
+                nav.classList.add('bg-transparent', 'h-20');
+            }
+        });
+
+        // Subtle parallax or reveal effect on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => observer.observe(el));
+    </script>
+</body></html>
